@@ -39,7 +39,7 @@ def main(config):
     if(state_dict_path is not None):
         #load the state dict
         print('Loading state dict from %s'%state_dict_path)
-        state_dict = torch.load(state_dict_path)
+        #state_dict = torch.load(state_dict_path)
     else:
         state_dict = None
     print(config)
@@ -70,7 +70,7 @@ def main(config):
     if config.mode == 'train':
         solver.train(state_dict)
     elif config.mode == 'test':
-        solver.test(state_dict)
+        solver.test(state_dict_path)
 
 
 if __name__ == '__main__':
