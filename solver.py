@@ -265,8 +265,7 @@ class Solver(object):
 			self.build_model()
 			#self.unet.load_state_dict(torch.load(unet_path))
 			if (state_dict is not None):
-				dicte=state_dict
-				self.unet.load_state_dict(dicte["state_dict"],strict=False)
+				self.unet.load_state_dict(torch.load(state_dict),strict=False)
 			self.unet.train(False)
 			self.unet.eval()
 
