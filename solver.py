@@ -119,7 +119,7 @@ class Solver(object):
 		# U-Net Train
 		if os.path.isfile(unet_path):
 			# Load the pretrained Encoder
-			self.unet.load_state_dict(torch.load(unet_path))
+			self.unet.load_state_dict(torch.load(unet_path),strict=False)
 			print('%s is Successfully Loaded from %s'%(self.model_type,unet_path))
 		else:
 			# Train for Encoder
@@ -266,7 +266,7 @@ class Solver(object):
 			#self.unet.load_state_dict(torch.load(unet_path))
 			if (state_dict is not None):
 				dicte=state_dict
-				self.unet.load_state_dict(dicte["state_dict"])
+				self.unet.load_state_dict(dicte["state_dict"],strict=False)
 			self.unet.train(False)
 			self.unet.eval()
 
