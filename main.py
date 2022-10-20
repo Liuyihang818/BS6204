@@ -81,7 +81,7 @@ if __name__ == '__main__':
     parser.add_argument('--image_size', type=int, default=1077)
     parser.add_argument('--t', type=int, default=3, help='t for Recurrent step of R2U_Net or R2AttU_Net')
     parser.add_argument('--mode', type=str, default='test')
-    parser.add_argument('--state_dict_path', type=str, default="./U_Net-100.pkl")
+    parser.add_argument('--state_dict_path', type=str, default="BS6204/U_Net-100.pkl")
     # training hyper-parameters
     parser.add_argument('--img_ch', type=int, default=3)
     parser.add_argument('--output_ch', type=int, default=1)
